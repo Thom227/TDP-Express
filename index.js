@@ -7,6 +7,13 @@ const bodyParser = require("body-parser");
 //Then import it like above and initialise it like below
 app.use(bodyParser.json());
 
+//Implement some middleware before the routing that logs the current time to the console but still passes the request on to the next function
+const logger = (req, res, next) => {
+    console.log(new Date());
+    next();
+}
+
+app.use (logger);
 
 //Create a requst handler that listens for GET requests at /, make it send a response of "Hello, my name is Thom"
 app.get("/", (req, res) => res.send("Hello, my name is Thom"));
