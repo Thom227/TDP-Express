@@ -2,14 +2,25 @@
 
 //Integrate Mongoose into an Express project and connect to a local MongoDB. Log if the connection was successfil or not to the console.
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/tdp_goose", {
+// mongoose.connect("mongodb://localhost:27017/tdp_goose", {
+//     useNewUrlParser: true    
+// },
+// function(err) {
+//     if(err) {
+//         "Error"
+//     } else {
+//         console.log("Connected to DB: tdp_goose");
+//     }
+// });
+
+mongoose.connect("mongodb://localhost:27017/tdp_movies", {
     useNewUrlParser: true    
 },
 function(err) {
     if(err) {
         "Error"
     } else {
-        console.log("Connected to DB: tdp_goose");
+        console.log("Connected to DB: tdp_movies");
     }
 });
 
@@ -70,8 +81,8 @@ const movies = new mongoose.Schema({
 
 //object with all the mongo functions "name" = the name of the collection -> mongo will always pluralises it
 const nameModel = mongoose.model("name", nameSchema);
-const childOfMoviesModel = mongoose.model("name", childOfMovies);
-const moviesModel = mongoose.model("name", movies);
+const childOfMoviesModel = mongoose.model("childOfMovies", childOfMovies);
+const moviesModel = mongoose.model("Movies", movies);
 
 
 module.exports = {
