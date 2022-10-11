@@ -2,7 +2,6 @@
 //Import express like below and include .Router, paste all your data requests underneath and finish with the export module.exports(CONST)
 const router = require("express").Router();
 
-
 //Create a array containing the names of everyone on your row
 let nameList = ["Luke", "Fauzia", "Shakeel", "Mimi", "Michael"];
 
@@ -35,7 +34,7 @@ router.put("Replace/:id", (req, res) => {
     nameList[req.params.id] = newName;
     res.send(`Replaced ${oldName} with ${nameList[req.params.id]}`);
 
-})
+});
 
 
 //At the end of the file, export it to be able to be used in the index file

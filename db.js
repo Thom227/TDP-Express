@@ -82,7 +82,7 @@ const movies = new mongoose.Schema({
 //object with all the mongo functions "name" = the name of the collection -> mongo will always pluralises it
 const nameModel = mongoose.model("name", nameSchema);
 const childOfMoviesModel = mongoose.model("childOfMovies", childOfMovies);
-const moviesModel = mongoose.model("Movies", movies);
+const moviesModel = mongoose.model("movies", movies);
 
 
 module.exports = {
