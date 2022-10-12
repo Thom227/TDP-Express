@@ -8,9 +8,9 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 
 //import the routes data handling file
-const nameRouter = require("./nameRoutes.js");
+const nameRouter = require("./routes/nameRoutes.js");
 
-const movieRouter = require("./movieRoutes.js");
+const movieRouter = require("./routes/movieRoutes.js");
 
 //Import the routes from the database db.js -> .. means the parent folder
 // const { nameModel, childOfMoviesModel, moviesModel } = require("./db.js");
@@ -29,3 +29,5 @@ app.use("/movies", movieRouter);
 
 //Syntax for creating a working local host server
 const server = app.listen(4494, () => console.log(`Server succesfully started on port ${server.address().port}`));
+
+module.exports = server;
